@@ -18,8 +18,10 @@ return (
     <>
         <ul>
             {allPokemon.map((poke)=> {
-                return <li key={poke.name}>{poke.name}</li>
-            })}
+                return (<li onClick={() => console.log("test")} key={poke.name}>
+                    <h3>{poke.name}</h3> 
+                </li>
+            )})}
         </ul>
     </>
 )
