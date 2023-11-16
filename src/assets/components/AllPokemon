@@ -1,0 +1,26 @@
+import { useEffect } from "react";
+
+const AllPokemon =() => {
+
+
+useEffect( () => {
+    const getAllPokemon = async() => {
+        try{
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon`);
+            const data = await response.json();
+            console.log(data.results);
+
+
+        }catch(error){console.error(error);}
+
+
+
+    }
+    getAllPokemon();
+})
+}
+
+
+
+
+export default AllPokemon;
