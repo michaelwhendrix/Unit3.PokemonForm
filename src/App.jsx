@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import AllPokemon from './assets/components/AllPokemon'
+import AllPokemon from './assets/components/AllPokemon.jsx'
 
 function App() {
 
