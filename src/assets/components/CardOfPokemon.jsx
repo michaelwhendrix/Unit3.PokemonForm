@@ -22,6 +22,7 @@ return (
     <>
         <h2>{singlePoke.name}</h2>
         <h3>Height: {singlePoke.height}</h3>
+        <h3>Weight: {singlePoke.weight}</h3>
         <h3>Base Experience: {singlePoke.base_experience}</h3>
         <button onClick={()=> setSinglePokemonId(null)}>Back</button>
     </>
