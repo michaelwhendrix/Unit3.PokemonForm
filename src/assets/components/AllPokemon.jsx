@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import CardOfPokemon from "./CardOfPokemon";
 
 const AllPokemon =() => {
     const [allPokemon, setAllPokemon] = useState([]);
+    const [singlePokemonId, setSinglePokemonId] = useState(null);
 
 useEffect( () => {
     const getAllPokemon = async() => {
@@ -16,13 +18,16 @@ useEffect( () => {
 },[]);
 return (
     <>
-        <ul>
-            {allPokemon.map((poke)=> {
-                return (<li onClick={() => console.log("test")} key={poke.name}>
-                    <h3>{poke.name}</h3> 
-                </li>
-            )})}
-        </ul>
+    {singlePokemonId ? <CardOfPokemon singlePokemonId={singlePokemonId}/> : 
+    <ul>
+    {allPokemon.map((poke)=> {
+        return (<li onClick={() => setSinglePokemonId(poke.name)} key={poke.name}>
+            <h3>{poke.name}</h3> 
+        </li>
+    )})}
+    </ul>
+    }
+        
     </>
 )
 
