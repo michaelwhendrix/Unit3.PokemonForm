@@ -18,7 +18,7 @@ useEffect( () => {
 },[]);
 return (
     <>
-    {singlePokemonId ? <CardOfPokemon singlePokemonId={singlePokemonId}/> : 
+    {singlePokemonId ? <CardOfPokemon singlePokemonId={singlePokemonId} setSinglePokemonId={setSinglePokemonId}/> : 
     <ul>
     {allPokemon.map((poke)=> {
         return (<li onClick={() => setSinglePokemonId(poke.name)} key={poke.name}>
