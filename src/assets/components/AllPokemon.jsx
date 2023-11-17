@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import CardOfPokemon from "./CardOfPokemon";
 
-const AllPokemon =() => {
-    const [allPokemon, setAllPokemon] = useState([]);
+const AllPokemon =({allPokemon, setAllPokemon}) => {
     const [singlePokemonId, setSinglePokemonId] = useState(null);
 
 useEffect( () => {
