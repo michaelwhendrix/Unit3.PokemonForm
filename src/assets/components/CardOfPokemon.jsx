@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 const CardOfPokemon = ({singlePokemonId,setSinglePokemonId}) => {
 const [singlePoke, setSinglePoke] = useState([]);
-const [abilities, setAbilities] = useState([]);
 
 useEffect(()=> {
         const getSinglePokemon = async() => {
@@ -11,19 +10,21 @@ useEffect(()=> {
             const data = await response.json();
             console.log(data);
             setSinglePoke(data);
-            setAbilities(data.abilities);
-            console.log(abilities);
         }catch(error){console.error(error)}
     }
     getSinglePokemon();
 },[]);
-
 return (
     <>
         <h2>{singlePoke.name}</h2>
         <h3>Height: {singlePoke.height}</h3>
         <h3>Weight: {singlePoke.weight}</h3>
         <h3>Base Experience: {singlePoke.base_experience}</h3>
+        <h3>Moves:</h3>
+        {//singlePoke.moves.forEach((mov) => {
+           //return <div>{mov.name}</div>
+        //})
+        }
         <button onClick={()=> setSinglePokemonId(null)}>Back</button>
     </>
 )

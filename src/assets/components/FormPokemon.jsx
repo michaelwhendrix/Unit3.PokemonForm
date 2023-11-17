@@ -8,27 +8,26 @@ const FormPokemon = ({allPokemon, setAllPokemon}) => {
     return (
         <>
         <h2>Add A Pokemon Form</h2>
-        <form>
+        <form id="pokForm">
             <label>Name
                 <input type="text" name="name" onChange={(e) => setNameNewPoke(e.target.value)}></input>
             </label>
             <label>Height
-                <input type="text" name="height"></input>
+                <input type="text" name="height" onChange={(e) => setHeightNewPoke(e.target.value)}></input>
             </label>
             <label>Weight
-                <input type="text" name="weight"></input>
+                <input type="text" name="weight" onChange={(e) => setWeightNewPoke(e.target.value)}></input>
             </label>
             <label>Power
-                <input type="text" name="power"></input>
+                <input type="text" name="power" onChange={(e) => setPowerNewPoke(e.target.value)}></input>
             </label>
             <button onClick={
                 (e) => {
                     e.preventDefault();
-                    setAllPokemon([...allPokemon, {name:nameNewPoke}])
+                    setAllPokemon([...allPokemon, {name:nameNewPoke}])                  
                 }
             }>Add Pokemon</button>
         </form>
-        <p>{nameNewPoke}</p>
         </>
     )
 }
