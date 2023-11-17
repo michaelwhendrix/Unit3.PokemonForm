@@ -23,9 +23,9 @@ return (
         <h3>Weight: {singlePoke.weight}</h3>
         <h3>Base Experience: {singlePoke.base_experience}</h3>
         <h3>Moves:</h3>
-        {//singlePoke.moves.forEach((mov) => {
-           //return <div>{mov.name}</div>
-        //})
+        {singlePoke.moves ? singlePoke.moves.map((mov) => {
+           return <div key={mov.move.name}>{mov.move.name} </div>
+        }) :<h3>Loading</h3>
         }
         <button onClick={()=> setSinglePokemonId(null)}>Back</button>
     </>
