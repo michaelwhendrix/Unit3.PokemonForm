@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const CardOfPokemon = ({singlePokemonId,setSinglePokemonId}) => {
 const [singlePoke, setSinglePoke] = useState([]);
 
+
 useEffect(()=> {
         const getSinglePokemon = async() => {
         try{
@@ -14,6 +15,7 @@ useEffect(()=> {
     }
     getSinglePokemon();
 },[]);
+console.log(singlePoke.moves);
 return (
     <>
         <h2>{singlePoke.name}</h2>
